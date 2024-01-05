@@ -1,0 +1,84 @@
+/* Pretty Magenta to Blue */
+/* background:  linear-gradient(var(--MAGENTA), 80%, var(--BLUE), var(--DARKBLUE)); */
+.backgroundBlack {
+    
+    background: var(--BLACK);
+    
+    display: block;
+    position: absolute;
+    z-index: -10;
+    height: 100%;
+    width: 100%;
+    
+}
+
+.backgroundWhite {
+    
+    background: var(--WHITE);
+    
+    display: block;
+    position: absolute;
+    z-index: -10;
+    height: 100%;
+    width: 100%;
+    
+}
+
+.bubblesContainer {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.bubbles {
+    position: relative;
+    display: flex;
+}
+
+.bubbles span {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    
+    background: var(--LIGHTERBLUE);
+    margin: 0 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 30px 15px var(--LIGHTBLUE),
+    0 0 50px 30px var(--LIGHTBLUE),
+    0 0 70px 45px var(--DARKBLUE);
+    animation: animate 15s linear infinite;
+    animation-duration: calc(125s / var(--i));
+}
+.bubbles span:nth-child(even){
+    background: var(--LIGHTERMAGENTA);
+    box-shadow: 0 0 30px 15px var(--MAGENTA),
+    0 0 50px 30px var(--MAGENTA),
+    0 0 70px 45px var(--DARKBURGUNDY);
+}
+@keyframes animate
+{
+    0%
+    {
+        transform: translateY(100vh) scale(0.1);
+    }
+    100%
+    {
+        transform: translateY(-10vh) scale(0.5);
+    }
+}
+
+
+.lightDarkButton {
+    background-color: var(--DARKBURGUNDY);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
